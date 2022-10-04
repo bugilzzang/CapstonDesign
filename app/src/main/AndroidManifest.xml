@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capston_SportsMatching">
         <activity
+            android:name=".yset_exercise_type"
+            android:exported="false" />
+        <activity
+            android:name=".yfind_pw_page"
+            android:exported="false" />
+        <activity
+            android:name=".yfind_id_page"
+            android:exported="false" />
+        <activity
             android:name=".ysignup_page"
             android:exported="false" />
         <activity
