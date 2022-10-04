@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capston_SportsMatching">
         <activity
+            android:name=".ysignup_page"
+            android:exported="false" />
+        <activity
+            android:name=".ylogin_page"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
