@@ -1,27 +1,15 @@
 package com.example.capston_sportsmatching;
 
-import static android.graphics.Color.TRANSPARENT;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.app.FragmentManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.capston_sportsmatching.R;
-import com.example.capston_sportsmatching.c_chattingFragment;
-import com.example.capston_sportsmatching.c_communityFragment;
-import com.example.capston_sportsmatching.c_homeFragment;
-import com.example.capston_sportsmatching.c_rankingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavi);
         //처음화면
-        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new c_homeFragment()).commit(); //FrameLayout에 fragment.xml 띄우기
+        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment()).commit(); //FrameLayout에 fragment.xml 띄우기
 
         //바텀 네비게이션뷰 안의 아이템 설정
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
@@ -47,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.home_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new c_homeFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment()).commit();
                         break;
                     case R.id.chatting_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new c_chattingFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cchattingFragment()).commit();
                         break;
                     case R.id.community_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new c_communityFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new ccommunityFragment()).commit();
                         break;
                     case R.id.ranking_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new c_rankingFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new crankingFragment()).commit();
                         break;
                 }
                 return;
@@ -69,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     //타이틀 메뉴바에 관한 코드
     @Override
     public boolean onCreateOptionsMenu(Menu action_menu) {
-        getMenuInflater().inflate(R.menu.c_menu_title_navi,action_menu);
+        getMenuInflater().inflate(R.menu.c_meun_title_navi,action_menu);
         return true;
     }
 

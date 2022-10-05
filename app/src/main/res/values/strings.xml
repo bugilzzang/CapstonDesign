@@ -7,4 +7,6 @@
     <string name="my_matching">내 매칭 현황</string>
     <string name="list">매칭 현황</string>
     <string name="community_add">글쓰기</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

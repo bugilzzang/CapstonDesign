@@ -17,15 +17,32 @@
         <entry key="app/src/main/res/drawable/c_ic_jangbiw.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/c_ic_ranking.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/c_ic_stadium.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_jangbi.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2855" />
+        <entry key="app/src/main/res/drawable/y_box_border_login.xml" value="0.2855" />
+        <entry key="app/src/main/res/drawable/y_box_border_logintext.xml" value="0.2855" />
+        <entry key="app/src/main/res/drawable/y_box_border_signup.xml" value="0.2855" />
+        <entry key="app/src/main/res/layout/activity_eeeeee.xml" value="0.1787037037037037" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_yfind_id_page.xml" value="0.3619791666666667" />
         <entry key="app/src/main/res/layout/c_fragment_chatting.xml" value="0.1" />
         <entry key="app/src/main/res/layout/c_fragment_community.xml" value="0.1" />
         <entry key="app/src/main/res/layout/c_fragment_ranking.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cchatting.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_ccommnuty.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/layout/fragment_chome.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/layout/fragment_cranking.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/y_activity_main.xml" value="0.3619791666666667" />
         <entry key="app/src/main/res/menu/c_menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/c_menu_title_navi.xml" value="0.1787037037037037" />
         <entry key="app/src/main/res/menu/c_meun_community_navi.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/menu/c_meun_title_navi.xml" value="0.1787037037037037" />
       </map>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_eeeeee.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
