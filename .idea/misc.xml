@@ -9,6 +9,21 @@
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_yset_exercise_type.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_ysignup_page.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/y_login_page.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/drawable/c_button_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_community.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_home.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_jangbi.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_jangbiw.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_ranking.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/c_ic_stadium.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/c_fragment_chatting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/c_fragment_community.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/c_fragment_ranking.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/c_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/c_menu_title_navi.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/menu/c_meun_community_navi.xml" value="0.1787037037037037" />
       </map>
     </option>
   </component>

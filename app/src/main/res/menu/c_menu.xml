@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_fragment"
+        android:enabled="true"
+        android:icon="@drawable/c_ic_home"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/chatting_fragment"
+        android:enabled="true"
+        android:icon="@drawable/c_ic_chat"
+        android:title="채팅"/>
+
+    <item
+        android:id="@+id/community_fragment"
+        android:enabled="true"
+        android:icon="@drawable/c_ic_community"
+        android:title="커뮤니티"/>
+
+    <item
+        android:id="@+id/ranking_fragment"
+        android:enabled="true"
+        android:icon="@drawable/c_ic_ranking"
+        android:title="랭킹"/>
+
+</menu>

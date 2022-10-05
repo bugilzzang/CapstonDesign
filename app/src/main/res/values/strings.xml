@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Capston_SportsMatching</string>
+    <string name="app_name">SportsMatching</string>
+    <string name="home">홈이다</string>
+    <string name="chatting">채팅</string>
+    <string name="community">커뮤니티</string>
+    <string name="ranking">랭킹</string>
+    <string name="my_matching">내 매칭 현황</string>
+    <string name="list">매칭 현황</string>
+    <string name="community_add">글쓰기</string>
 </resources>
