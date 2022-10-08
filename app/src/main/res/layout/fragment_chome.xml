@@ -37,8 +37,8 @@
         <LinearLayout
             android:layout_width="344dp"
             android:layout_height="300dp"
-            android:layout_marginTop="200dp"
             android:layout_marginLeft="35dp"
+            android:layout_marginTop="200dp"
             android:background="@color/white">
 
             <RelativeLayout
@@ -52,14 +52,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:background="@color/purple_700"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/my_matching"
                         android:textColor="@color/white"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <ListView
@@ -79,14 +80,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:background="@color/purple_700"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/list"
                         android:textColor="@color/white"
-                        android:gravity="center"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp" />
                 </LinearLayout>
 
                 <ListView

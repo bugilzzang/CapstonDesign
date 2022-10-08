@@ -1,4 +1,4 @@
-package com.example.capston_sportsmatching;
+package com.example.capstonproject;
 
 import org.junit.Test;
 
