@@ -14,7 +14,9 @@ public class ylogin_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ylogin_page);
 
+
         goSignupBtn = (Button) findViewById(R.id.goSignupBtn);
+
 
         goSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +25,7 @@ public class ylogin_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 }

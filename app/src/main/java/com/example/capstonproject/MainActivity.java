@@ -2,10 +2,13 @@ package com.example.capstonproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         ccommunityFragment = new ccommunityFragment();
         cchattingFragment = new cchattingFragment();
         crankingFragment = new crankingFragment();
+
+
 
 
         //처음화면
@@ -66,29 +72,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }  //oncreate
-/*
-    //타이틀 메뉴바에 관한 코드
-    @Override
-    public boolean onCreateOptionsMenu(Menu action_menu) {
-        getMenuInflater().inflate(R.menu.menu_title_navi,action_menu);
+    //타이틀 메뉴바 관한 코드
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.c_menu_title_navi , menu);
         return true;
     }
 
- */
-/*
-    //@Override 오버라이딩이 안돼 시발 해결해줘
-    public boolean onOptionsItemsSelected(@NonNull MenuItem item) {
-        int curId = item.getItemId();
-        switch (curId) {
-            case R.id.action_btn1:
-                Toast.makeText(this,"내정보" , Toast.LENGTH_SHORT).show();
-            case R.id.action_btn2:
-                Toast.makeText(this,"로그아웃" , Toast.LENGTH_SHORT).show();
-            case R.id.action_btn3:
-                Toast.makeText(this,"설정" , Toast.LENGTH_SHORT).show();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+// 추가로 버튼에 동작 넣을거면 if 해서 넣으면 됩니다.
+        if( id == R.id.longin_btn) {
+            Intent intent = new Intent(getApplicationContext(), ylogin_page.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
-
- */
 }
