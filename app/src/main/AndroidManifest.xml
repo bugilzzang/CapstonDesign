@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstonProject">
         <activity
+            android:name=".activity_amatchinglist"
+            android:exported="false" />
+        <activity
             android:name=".ysignup_page"
             android:exported="false" />
         <activity
