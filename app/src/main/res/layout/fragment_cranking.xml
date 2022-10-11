@@ -5,9 +5,116 @@
     android:layout_height="match_parent"
     tools:context=".crankingFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/ranking" />
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/ranking_title_navi"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" >
+
+           <TextView
+               android:id="@+id/ranking_title_text"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:text="@string/ranking_page"
+               android:gravity="center"
+               android:background="@color/sahmyook"
+               android:textColor="@color/white"
+               android:textSize="30dp"
+               android:textStyle="bold"/>
+
+           <TextView
+               android:id="@+id/sports_select"
+               android:layout_width="160dp"
+               android:layout_height="45dp"
+               android:text="@string/sports_select"
+               android:gravity="center"
+               android:textSize="15dp"
+               android:textStyle="bold"
+               android:background="@color/white"
+               android:layout_below="@id/ranking_title_text"/>
+
+        <Button
+            android:id="@+id/soccer_btn"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="55dp"
+            android:layout_toRightOf="@id/sports_select"
+            android:background="@drawable/c_button_background"
+            android:text="@string/soccer"
+            android:textStyle="bold"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/bowling_btn"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_toRightOf="@id/soccer_btn"
+            android:background="@drawable/c_button_background"
+            android:text="@string/bowling"
+            android:textStyle="bold"
+            android:textSize="10dp" />
+        <Button
+            android:id="@+id/badminton_btn"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="55dp"
+            android:layout_toRightOf="@id/bowling_btn"
+            android:background="@drawable/c_button_background"
+            android:text="@string/badminton"
+            android:textStyle="bold"
+            android:textSize="10dp" />
+
+       </RelativeLayout>
+
+        <!-- adapter 통해서 연결할 예정 예시로 현재 이미지랑 값 넣어둠 -->
+        <ScrollView
+            android:id="@+id/ranking_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ranking_title_navi">
+
+            <RelativeLayout
+                android:id="@+id/ranking_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ranking_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/sahmyook"
+                    android:gravity="center"
+                    android:text="@string/first"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ranking_icon"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/ranking_first"
+                    android:src="@drawable/c_first" />
+
+                <ListView
+                    android:id="@+id/ranking_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/ranking_first"
+                    android:layout_marginLeft="120dp" />
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 </FrameLayout>
