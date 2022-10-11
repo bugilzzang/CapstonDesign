@@ -169,6 +169,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_submit"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:background="@drawable/y_box_border_signupgo"
