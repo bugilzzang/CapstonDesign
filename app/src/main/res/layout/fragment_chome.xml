@@ -7,100 +7,124 @@
     tools:context=".chomeFragment">
 
     <RelativeLayout
+        android:id="@+id/user_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/c_ground">
+        android:layout_height="105dp"
+        android:background="@color/black">
 
-        <ImageButton
-            android:id="@+id/stadium"
-            android:layout_width="180dp"
-            android:layout_height="120dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/c_button_background"
-            android:backgroundTint="@color/sahmyook"
-            android:src="@drawable/c_ic_stadium_24"
-            tools:ignore="DuplicateClickableBoundsCheck" />
+        <RelativeLayout
+            android:id="@+id/rogo"
+            android:layout_width="95dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="3dp"
+            >
 
-        <ImageButton
-            android:id="@+id/jangbiw"
-            android:layout_width="180dp"
-            android:layout_height="120dp"
-            android:layout_alignTop="@id/stadium"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@id/stadium"
-            android:background="@drawable/c_button_background"
-            android:backgroundTint="@color/sahmyook"
-            android:src="@drawable/c_ic_jangbi_24" />
-
-        <LinearLayout
-            android:layout_width="344dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="200dp"
-            android:background="@color/white">
-
-            <RelativeLayout
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:scaleType="centerCrop"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/c_rogo" />
 
+        </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/my_matching_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="43dp"
-                    android:background="@color/purple_700"
-                    android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_toRightOf="@id/rogo"
+            android:layout_marginTop="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/my_matching"
-                        android:textColor="@color/white"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/my_matching_list" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/user_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_height="20dp"
+                android:text="@string/userid"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
 
-                <LinearLayout
-                    android:id="@+id/list"
-                    android:layout_width="match_parent"
-                    android:layout_height="43dp"
-                    android:background="@color/purple_700"
-                    android:orientation="horizontal">
+            <TextView
+                android:id="@+id/user_major"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/user_id"
+                android:text="@string/user_major"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/list"
-                        android:textColor="@color/white"
-                        android:textSize="15dp" />
-                </LinearLayout>
+            <TextView
+                android:id="@+id/user_team"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/team"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_below="@id/user_major"/>
 
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/list"
-                    android:layout_weight="1" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/record"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginTop="105dp"
+        android:background="@color/white">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/jangbi_btn"/>
+
+
+        <Button
+            android:id="@+id/jangbi_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/c_home_btn_background"
+            android:text="장비 대여"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/jangbi_btn"
+            android:background="@drawable/c_home_btn_background"
+            android:text="내 매칭"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/btn1"
+            android:background="@drawable/c_home_btn_background"
+            android:text="최근 전적"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="220dp"
+        android:background="#434343">
+
+
+    </ScrollView>
 
 </FrameLayout>

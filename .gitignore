@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/res/drawable-v24/c_ic_second.jpeg
+app/src/main/res/drawable-v24/c_ic_third.jpeg
