@@ -12,9 +12,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class yTask_test extends AsyncTask<String, Void, String> {
-    public static String ip ="182.172.34.93"; //자신의 IP번호
     String sendMsg, receiveMsg;
-    String serverip = "http://localhost:8080/"; // 연결할 jsp주소
+    String serverip = "http://localhost:8080/Cap_Server/list.jsp"; // 연결할 jsp주소
 
     yTask_test(String sendmsg){
         this.sendMsg = sendmsg;
