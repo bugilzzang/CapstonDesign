@@ -22,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
     ActionMenuView actionMenuView;
     Button buttonEvent;
     chomeFragment chomeFragment;
-    ccommunityFragment ccommunityFragment;
+    cmatch_addFragment cmatch_addFragment;
+    cmatchFragment cmatchFragment;
     cchattingFragment cchattingFragment;
-    crankingFragment crankingFragment;
-
-
+    activity_amatchinglist activity_amatchinglist;
 
 
     @Override
@@ -35,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         chomeFragment = new chomeFragment();
-        ccommunityFragment = new ccommunityFragment();
+        cmatch_addFragment = new cmatch_addFragment();
         cchattingFragment = new cchattingFragment();
-        crankingFragment = new crankingFragment();
 
 
 
@@ -56,14 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home_fragment:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment()).commit();
                         return true;
+                    case R.id.match_add_fragment:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();
+                        return true;
                     case R.id.chatting_fragment:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cchattingFragment()).commit();
-                        return true;
-                    case R.id.community_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new ccommunityFragment()).commit();
-                        return true;
-                    case R.id.ranking_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new crankingFragment()).commit();
                         return true;
                 }
                 return false;
