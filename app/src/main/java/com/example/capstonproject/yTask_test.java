@@ -7,51 +7,56 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.Exception;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 public class yTask_test extends AsyncTask<String, Void, String> {
     String sendMsg, receiveMsg;
-    String serverip = "http://localhost:8080/Cap_Server/list.jsp"; // 연결할 jsp주소
 
-    yTask_test(String sendmsg){
-        this.sendMsg = sendmsg;
-    }
     @Override
-    protected String doInBackground(String... strings) {
-        try {
+    protected String doInBackground(String... strings){
+        try{
             String str;
-            URL url = new URL(serverip);
+            //URL url = new URL("http://localhost:8111/Cap_Server/legendTest.jsp");
+            URL url = new URL("http://10.0.2.2:8111/Cap_Server/legendTest.jsp");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             conn.setRequestMethod("POST");
             OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
+            sendMsg = "yMSG="+strings[0];
 
-            if(sendMsg.equals("vision_write")){
-                sendMsg = "vision_write="+strings[0]+"&type="+strings[1];
-            }else if(sendMsg.equals("vision_list")){
-                sendMsg = "&type="+strings[0];
-            }
-
-            osw.write(sendMsg);
+            osw.write(sendMsg);//OutputStreamWriter에 담아 전송합니다.
             osw.flush();
+
+
+
+            //jsp와 통신이 정상적으로 되었을 때 할 코드들입니다.
             if(conn.getResponseCode() == conn.HTTP_OK) {
                 InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "UTF-8");
                 BufferedReader reader = new BufferedReader(tmp);
                 StringBuffer buffer = new StringBuffer();
+                //jsp에서 보낸 값을 받겠죠?
                 while ((str = reader.readLine()) != null) {
                     buffer.append(str);
                 }
                 receiveMsg = buffer.toString();
+
             } else {
                 Log.i("통신 결과", conn.getResponseCode()+"에러");
+                // 통신이 실패했을 때 실패한 이유를 알기 위해 로그를 찍습니다.
             }
-        } catch (MalformedURLException e) {
+        }catch (MalformedURLException e){
             e.printStackTrace();
-        } catch (IOException e) {
+        }catch(IOException e){
             e.printStackTrace();
         }
+
         return receiveMsg;
     }
+
+
 }

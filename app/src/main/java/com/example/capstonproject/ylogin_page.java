@@ -28,9 +28,11 @@ public class ylogin_page extends AppCompatActivity {
 
         //서버 통신 테스트
         String sendmsg = "vision_write";
-        String result = "영준값"; //자신이 보내고싶은 값을 보내시면됩니다
+        String yMSG = "영준값"; //자신이 보내고싶은 값을 보내시면됩니다
         try{
-            String rst = new yTask_test(sendmsg).execute(result,"vision_write").get();
+            yTask_test ytt = new yTask_test();
+            String rst = ytt.execute(yMSG).get();
+            goSignupBtn.setText(rst);
         }catch (Exception e){
             e.printStackTrace();
         }
