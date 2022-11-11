@@ -20,12 +20,12 @@ public class yTask_test extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... strings){
         try{
             String str;
-            //URL url = new URL("http://localhost:8111/Cap_Server/legendTest.jsp");
-            URL url = new URL("http://10.0.2.2:8111/Cap_Server/legendTest.jsp");
+            URL url = new URL("http://10.0.2.2:8111/Capstonserver2/legendTest.jsp");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             conn.setRequestMethod("POST");
+            //conn.setRequestProperty("Accept", "application/xml"); //이거를 박으면 xml코드로 리턴받음?
+            conn.setDoOutput(true); //outputstream으로 데이터를 넘기기로 함
+
             OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
             sendMsg = "yMSG="+strings[0];
 
