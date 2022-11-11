@@ -29,6 +29,7 @@ public class yTask_test extends AsyncTask<String, Void, String> {
             OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
             sendMsg = "yMSG="+strings[0];
 
+
             osw.write(sendMsg);//OutputStreamWriter에 담아 전송합니다.
             osw.flush();
 
