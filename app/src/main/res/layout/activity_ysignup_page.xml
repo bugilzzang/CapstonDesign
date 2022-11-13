@@ -31,10 +31,12 @@
 
                     >
                     <EditText
+                        android:id="@+id/user_id"
                         android:layout_width="270dp"
                         android:layout_height="69dp"
                         android:hint="아이디"/>
                     <Button
+                        android:id="@+id/confirm_id"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:text="중복확인"
@@ -43,12 +45,14 @@
 
 
                 <EditText
+                    android:id="@+id/user_pw"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:hint="비밀번호"/>
 
 
                 <EditText
+                    android:id="@+id/user_pw2"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:hint="비밀번호 확인"/>
@@ -62,6 +66,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/y_box_border_logintext">
                 <EditText
+                    android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:hint="이름"/>
@@ -72,10 +77,12 @@
 
                     >
                     <EditText
+                        android:id="@+id/user_email"
                         android:layout_width="270dp"
                         android:layout_height="69dp"
                         android:hint="이메일"/>
                     <Button
+                        android:id="@+id/confirm_email"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:text="이메일확인"
@@ -106,15 +113,25 @@
                         android:textSize="20dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"/>
-                    <RadioButton
+                    <RadioGroup
+                        android:id="@+id/sex_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="남자"
-                        android:layout_marginRight="10dp"></RadioButton>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="여자"></RadioButton>
+                        android:orientation="horizontal"
+                        >
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="남자"
+                            android:layout_marginRight="10dp"></RadioButton>
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="여자"></RadioButton>
+                    </RadioGroup>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -129,14 +146,17 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"/>
                     <EditText
+                        android:id="@+id/birth_year"
                         android:layout_width="70dp"
                         android:layout_height="40dp"
                         android:hint="년도"/>
                     <EditText
+                        android:id="@+id/birth_month"
                         android:layout_width="70dp"
                         android:layout_height="40dp"
                         android:hint="월"/>
                     <EditText
+                        android:id="@+id/birth_day"
                         android:layout_width="70dp"
                         android:layout_height="40dp"
                         android:hint="일"/>
@@ -158,10 +178,12 @@
 
                 >
                 <EditText
+                    android:id="@+id/user_phonenumber"
                     android:layout_width="270dp"
                     android:layout_height="69dp"
                     android:hint="전화번호: 000-0000-0000"/>
                 <Button
+                    android:id="@+id/confirm_phone"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="인증번호발송"
