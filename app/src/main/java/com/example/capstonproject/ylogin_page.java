@@ -37,6 +37,8 @@ public class ylogin_page extends AppCompatActivity {
                     //로그인 결과
                     if(result.equals("로그인성공")){
                         Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                     }else if(result.equals("로그인실패")){
                         Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
 

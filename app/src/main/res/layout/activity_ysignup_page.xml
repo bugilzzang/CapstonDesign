@@ -70,22 +70,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:hint="이름"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:background="@drawable/y_box_border_logintext"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
 
                     >
                     <EditText
-                        android:id="@+id/user_email"
+                        android:id="@+id/user_phonenumber"
                         android:layout_width="270dp"
                         android:layout_height="69dp"
-                        android:hint="이메일"/>
+                        android:hint="전화번호: 000-0000-0000"/>
                     <Button
-                        android:id="@+id/confirm_email"
+                        android:id="@+id/confirm_phone"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:text="이메일확인"
+                        android:text="인증번호발송"
                         android:background="@drawable/y_box_border_signupbtn"/>
                 </LinearLayout>
 
@@ -134,61 +138,8 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:gravity="center|left">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="생년월일"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
-                    <EditText
-                        android:id="@+id/birth_year"
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:hint="년도"/>
-                    <EditText
-                        android:id="@+id/birth_month"
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:hint="월"/>
-                    <EditText
-                        android:id="@+id/birth_day"
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:hint="일"/>
-
-
-                </LinearLayout>
             </LinearLayout>
 
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:background="@drawable/y_box_border_logintext"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-
-                >
-                <EditText
-                    android:id="@+id/user_phonenumber"
-                    android:layout_width="270dp"
-                    android:layout_height="69dp"
-                    android:hint="전화번호: 000-0000-0000"/>
-                <Button
-                    android:id="@+id/confirm_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="인증번호발송"
-                    android:background="@drawable/y_box_border_signupbtn"/>
-            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_submit"
@@ -199,16 +150,5 @@
                 android:textColor="#ffffff"></Button>
         </LinearLayout>
 
-
-
-
-
-
-
-
     </ScrollView>
-
-
-
-
 </LinearLayout>
