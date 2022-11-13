@@ -32,7 +32,7 @@ public class ylogin_page extends AppCompatActivity {
                 try{
                     //로그인 시도
                     yTask task = new yTask("login");
-                    String result =  task.execute("id=" + login_id.getText() + "&pw=" + login_pw.getText()).get();
+                    String result =  task.execute("a = '1'&id=" + login_id.getText() + "&pw=" + login_pw.getText()).get();
 
                     //로그인 결과
                     if(result.equals("로그인성공")){
