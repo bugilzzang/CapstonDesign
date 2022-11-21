@@ -45,9 +45,9 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            profile = (ImageView) itemView.findViewById(R.id.profile);
-            name = (TextView) itemView.findViewById(R.id.name);
-            message = (TextView) itemView.findViewById(R.id.message);
+            profile =  itemView.findViewById(R.id.profile);
+            name =  itemView.findViewById(R.id.name);
+            message =  itemView.findViewById(R.id.message);
         }
 
         void onBind(aFriendItem item){

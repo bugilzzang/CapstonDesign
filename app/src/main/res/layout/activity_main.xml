@@ -16,17 +16,21 @@
         app:itemIconTint="@color/c_menu_bottom_color"
         app:itemTextColor="@color/c_menu_bottom_color"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/c_menu"
-        />
+        app:menu="@menu/c_menu" />
+
 
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="633dp"
 
+        />
 
-
-
-
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        bottomtobottom="match_parent"
+        android:translationY="200dp"
+        />
 </RelativeLayout>

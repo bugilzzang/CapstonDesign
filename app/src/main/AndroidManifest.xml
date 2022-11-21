@@ -14,11 +14,12 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".activity_amatchinglist"
-            android:exported="false" />
-        <activity
             android:name=".ysignup_page"
             android:exported="false" />
+        <activity
+            android:name=".a_add_match"
+            android:exported="false" />
+
         <activity
             android:name=".yset_exercise_type"
             android:exported="false" />
