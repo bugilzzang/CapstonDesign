@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //처음화면
 
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
-        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment()).commit(); //FrameLayout에 fragment.xml 띄우기
+        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment("adone")).commit(); //FrameLayout에 fragment.xml 띄우기
 
 
         //바텀 네비게이션뷰 안의 아이템 설정
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("adone")).commit();
                         return true;
                     case R.id.match_add_fragment:
                         //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();
