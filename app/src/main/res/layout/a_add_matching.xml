@@ -80,76 +80,330 @@
                     android:id="@+id/tableLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     >
 
 
 
-                    <TableRow
-                        android:layout_weight="1"
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        //(매칭종목)
-                        <ImageButton
-                            android:id="@+id/BtnNum0"
-                            android:layout_weight="1"
-                            android:src="@drawable/matchimage" />
-                        //인원
 
-                        <ImageButton
-                            android:id="@+id/BtnNum1"
-                            android:layout_weight="1"
-                            android:src="@drawable/peopleimage" />
-                        //성별
-                        <ImageButton
-                            android:layout_weight = "1"
-                            android:id="@+id/BtnNum2"
-                            android:src="@drawable/femaleimage"/>
 
-                    </TableRow>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/question1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="운동 종목"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                />
 
-                    <TableRow
-                        android:layout_weight="1">
-                        //실력
-                        <ImageButton
-                            android:layout_weight = "1"
-                            android:id="@+id/BtnNum3"
-                            android:src="@drawable/godimage"/>
-                        //참가비
-                        <ImageButton
-                            android:layout_weight = "1"
-                            android:id="@+id/BtnNum4"
-                            android:src="@drawable/permissionimage"/>
-                        //클럽(소속학과)
-                        <ImageButton
-                            android:layout_weight = "1"
-                            android:id="@+id/BtnNum5"
-                            android:src="@drawable/clubimage"/>
 
-                    </TableRow>
+
+                            <!--TODO : core -->
+                            <RadioGroup
+                                android:id="@+id/radio_group1"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                >
+
+                                <RadioButton
+                                    android:checked="false"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="축구"
+                                    android:layout_marginLeft="40dp"
+                                    android:id="@+id/rg_btnsoccer"
+                                    />
+
+                                <RadioButton
+                                    android:checked="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="풋살"
+                                    android:layout_marginLeft="50dp"
+                                    android:id="@+id/rg_btnfootball" />
+
+                            </RadioGroup>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title2"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/question2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="인원수"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                />
+
+
+
+                            <!--TODO : core -->
+                            <RadioGroup
+                                android:id="@+id/radio_group2"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                >
+
+                                <RadioButton
+                                    android:checked="false"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="6 vs 6"
+                                    android:layout_marginLeft="60dp"
+                                    android:id="@+id/rg_btn6vs6"
+                                    />
+
+                                <RadioButton
+                                    android:checked="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="11 vs 11"
+                                    android:layout_marginLeft="40dp"
+                                    android:id="@+id/rg_btn11vs11" />
+
+                            </RadioGroup>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title3"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/question3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="성별"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                />
+
+
+
+                            <!--TODO : core -->
+                            <RadioGroup
+                                android:id="@+id/radio_group3"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                >
+
+                                <RadioButton
+                                    android:checked="false"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="남자"
+                                    android:layout_marginLeft="76dp"
+                                    android:id="@+id/rg_btnman"
+                                    />
+
+                                <RadioButton
+                                    android:checked="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="여자"
+                                    android:layout_marginLeft="50dp"
+                                    android:id="@+id/rg_btnfemale" />
+
+                            </RadioGroup>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title4"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/question4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="실력"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                />
+
+
+
+                            <!--TODO : core -->
+                            <RadioGroup
+                                android:id="@+id/radio_group"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                >
+
+                                <RadioButton
+                                    android:checked="false"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="상"
+                                    android:layout_marginLeft="76dp"
+                                    android:id="@+id/rg_btnhigh"
+                                    />
+                                <RadioButton
+                                    android:checked="false"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="중"
+                                    android:layout_marginLeft="35dp"
+                                    android:id="@+id/rg_btnmiddle"
+                                    />
+
+                                <RadioButton
+                                    android:checked="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="하"
+                                    android:layout_marginLeft="30dp"
+                                    android:id="@+id/rg_btnlow" />
+
+                            </RadioGroup>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title5"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/question5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="참가비"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="30dp"/>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_below="@+id/layout_title"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:layout_below="@+id/layout_title6"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_margin="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/question6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="학과"
+                                    android:textStyle="bold"
+                                    android:textSize="17dp"
+                                    />
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="50dp"/>
+
+                                <!--TODO : core -->
+
+                            </LinearLayout>
+
+                            <!--TODO : core -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </TableLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="경기구장"/>
-
 
 
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/comment_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical"/>
-            <EditText
-                android:id="@+id/comment_et"
-                android:layout_width="match_parent"
-                android:padding="8dp"
-                android:layout_height="0dp"
-                android:background="#eeeeee"
-                android:layout_weight="1"
-                android:hint="댓글 내용을 입력하세요"/>
+
 
         </LinearLayout>
     </ScrollView>

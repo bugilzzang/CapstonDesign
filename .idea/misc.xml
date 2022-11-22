@@ -4,12 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_button_background.xml" value="0.2035" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_home_btn_background.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_ic_chat.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_ic_community.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_ic_home.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/c_ic_stadium.xml" value="0.2035" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/drawable/y_box_border_signup.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_yfind_id_page.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_ylogin_page.xml" value="0.1634963768115942" />
@@ -17,7 +12,7 @@
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/activity_ysignup_page.xml" value="0.2" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/fragment_cchatting.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/fragment_ccommunity.xml" value="0.1" />
-        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/fragment_chome.xml" value="0.264" />
+        <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/fragment_chome.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/layout/fragment_cranking.xml" value="0.1" />
         <entry key="..\:/Users/ADONE/Documents/GitHub/CapstonDisign/app/src/main/res/menu/menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/Documents/GitHub/CapstonDesign/app/src/main/res/layout/a_add_matching.xml" value="0.1" />
