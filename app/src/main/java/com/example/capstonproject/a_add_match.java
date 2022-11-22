@@ -41,7 +41,7 @@ public class a_add_match extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.home_fragment:
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment()).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("adone")).commit();
                             return true;
                         case R.id.match_add_fragment:
                             //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();
