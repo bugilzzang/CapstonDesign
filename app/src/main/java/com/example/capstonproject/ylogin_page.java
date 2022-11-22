@@ -3,6 +3,7 @@ package com.example.capstonproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,11 +15,15 @@ import android.widget.Toast;
 public class ylogin_page extends AppCompatActivity {
     Button goSignupBtn, loginBtn;
     EditText login_id, login_pw;
+    SharedPreferences USERINFO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ylogin_page);
+
+        USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
+        SharedPreferences.Editor editor = USERINFO.edit();
 
 
         goSignupBtn = (Button) findViewById(R.id.goSignupBtn);
@@ -37,6 +42,9 @@ public class ylogin_page extends AppCompatActivity {
                     //로그인 결과
                     if(result.equals("로그인성공")){
                         Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+
+                        editor.putString("id", login_id.getText().toString());
+
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else if(result.equals("로그인실패")){
@@ -75,8 +83,6 @@ public class ylogin_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
     }
 

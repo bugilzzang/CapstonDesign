@@ -21,9 +21,6 @@
             android:exported="false" />
 
         <activity
-            android:name=".yset_exercise_type"
-            android:exported="false" />
-        <activity
             android:name=".ylogin_page"
             android:exported="false" />
         <activity
