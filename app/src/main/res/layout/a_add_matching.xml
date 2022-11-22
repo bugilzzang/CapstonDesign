@@ -6,7 +6,153 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".a_add_match">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnback"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:src="@drawable/backimage" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+                    <ImageButton
+                        android:id="@+id/btnshare"
+                        android:padding="16dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/shareimage"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="작성자"/>
+
+                <EditText
+                    android:id="@+id/date_tv"
+                    android:padding="16dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="내용을 입력해주세요."
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="정보"/>
+
+                <TableLayout
+                    android:id="@+id/tableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+
+
+                    <TableRow
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        //(매칭종목)
+                        <ImageButton
+                            android:id="@+id/BtnNum0"
+                            android:layout_weight="1"
+                            android:src="@drawable/matchimage" />
+                        //인원
+
+                        <ImageButton
+                            android:id="@+id/BtnNum1"
+                            android:layout_weight="1"
+                            android:src="@drawable/peopleimage" />
+                        //성별
+                        <ImageButton
+                            android:layout_weight = "1"
+                            android:id="@+id/BtnNum2"
+                            android:src="@drawable/femaleimage"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_weight="1">
+                        //실력
+                        <ImageButton
+                            android:layout_weight = "1"
+                            android:id="@+id/BtnNum3"
+                            android:src="@drawable/godimage"/>
+                        //참가비
+                        <ImageButton
+                            android:layout_weight = "1"
+                            android:id="@+id/BtnNum4"
+                            android:src="@drawable/permissionimage"/>
+                        //클럽(소속학과)
+                        <ImageButton
+                            android:layout_weight = "1"
+                            android:id="@+id/BtnNum5"
+                            android:src="@drawable/clubimage"/>
+
+                    </TableRow>
+                </TableLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="경기구장"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/comment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="vertical"/>
+            <EditText
+                android:id="@+id/comment_et"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_height="0dp"
+                android:background="#eeeeee"
+                android:layout_weight="1"
+                android:hint="댓글 내용을 입력하세요"/>
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +165,7 @@
             android:id="@+id/reg_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:padding="8dp"
             android:text="작성완료" />
     </LinearLayout>
