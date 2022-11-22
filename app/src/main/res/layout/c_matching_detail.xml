@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".a_add_match">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnback"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:src="@drawable/backimage" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+                    <ImageButton
+                        android:id="@+id/btnshare"
+                        android:padding="16dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/shareimage"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="작성자"/>
+
+                <TextView
+                    android:id="@+id/matching_title"
+                    android:padding="16dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="매칭 제목"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="정보"
+                    android:textStyle="bold"
+                    />
+
+                <TableLayout
+                    android:id="@+id/tableLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="#eeeeee"
+                    android:layout_marginTop="10dp">
+
+
+
+                    <TableRow
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        //(매칭종목)
+                        <ImageButton
+                            android:id="@+id/BtnNum0"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/matchimage" />
+                        //인원
+                        <ImageButton
+                            android:id="@+id/BtnNum1"
+                            android:layout_weight="1"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/peopleimage" />
+                        //성별
+                        <ImageButton
+                            android:id="@+id/BtnNum2"
+                            android:layout_weight = "1"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/femaleimage"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_weight="1">
+                        //실력
+                        <ImageButton
+                            android:id="@+id/BtnNum3"
+                            android:layout_weight = "1"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/godimage"/>
+                        //참가비
+                        <ImageButton
+                            android:id="@+id/BtnNum4"
+                            android:layout_weight = "1"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/permissionimage"/>
+                        //클럽(소속학과)
+                        <ImageButton
+                            android:id="@+id/BtnNum5"
+                            android:layout_weight = "1"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/clubimage"/>
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/comment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:padding="8dp"
+            android:text="참가신청"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/c_button_background"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/c_button_background"
+        app:itemIconTint="@color/c_menu_bottom_color"
+        app:itemTextColor="@color/c_menu_bottom_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/c_menu" />
+</LinearLayout>
