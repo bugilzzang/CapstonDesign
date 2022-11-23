@@ -1,6 +1,7 @@
 package com.example.capstonproject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -30,6 +31,7 @@ public class a_add_match extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.a_add_matching);
 
+            SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE); //영준
             //처음화면
 
             NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
@@ -41,7 +43,9 @@ public class a_add_match extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.home_fragment:
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("adone")).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
+                                    , USERINFO.getString("name", "")
+                                    , USERINFO.getString("team", ""))).commit();
                             return true;
                         case R.id.match_add_fragment:
                             //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();

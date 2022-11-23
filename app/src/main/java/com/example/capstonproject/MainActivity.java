@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //유저정보 스토리지
+        SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
+        SharedPreferences.Editor editor = USERINFO.edit();
+
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         mRecyclerAdapter = new aMyRecyclerAdapter();
@@ -64,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
         //처음화면
 
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
-        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment("adone")).commit(); //FrameLayout에 fragment.xml 띄우기
+        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
+        , USERINFO.getString("name", "")
+        , USERINFO.getString("team", ""))).commit(); //FrameLayout에 fragment.xml 띄우기
 
 
         //바텀 네비게이션뷰 안의 아이템 설정
@@ -74,7 +82,16 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("adone")).commit();
+                        //로그인 시도가 true일때만 유저정보 뜨게 하기, 로그인 안됐으면 빈칸
+                        if(USERINFO.getBoolean("is_login", false) == true){
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
+                                    , USERINFO.getString("name", "")
+                                    , USERINFO.getString("team", ""))).commit();
+
+                        }else{
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("", "", "")).commit();
+
+                        }
                         return true;
                     case R.id.match_add_fragment:
                         //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();

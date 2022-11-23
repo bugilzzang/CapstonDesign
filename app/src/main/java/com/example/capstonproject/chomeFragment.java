@@ -24,16 +24,17 @@ public class chomeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private aMyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<aFriendItem> mfriendItems;
-    String id;
-    TextView user_id;
+    String id, major, team;
 
-    public chomeFragment(String id){
+    TextView user_name, user_major, user_team;
+    public chomeFragment(String id, String major, String team){
         super();
         this.id = id;
+        this.major = major;
+        this.team = team;
     }
 
 
-    SharedPreferences USERINFO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,8 +43,12 @@ public class chomeFragment extends Fragment {
         //USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
         View view = inflater.inflate(R.layout.fragment_chome, container, false);
 
-        user_id = (TextView) view.findViewById(R.id.user_id);
-        user_id.setText(id);
+        user_name = (TextView) view.findViewById(R.id.user_id);
+        user_name.setText(id);
+        user_major = (TextView) view.findViewById(R.id.user_major);
+        user_major.setText(major);
+        user_team = (TextView) view.findViewById(R.id.user_team);
+        user_team.setText(team);
 
         return view;
     }

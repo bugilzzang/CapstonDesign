@@ -22,8 +22,7 @@ public class ylogin_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ylogin_page);
 
-        USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
-        SharedPreferences.Editor editor = USERINFO.edit();
+        
 
 
         goSignupBtn = (Button) findViewById(R.id.goSignupBtn);
@@ -41,21 +40,26 @@ public class ylogin_page extends AppCompatActivity {
 
                     //로그인 결과
                     if(result.equals("로그인성공")){
-                        Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+                        
+                        USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = USERINFO.edit();
 
+                        //들어가야할 정보 : user 테이블, 참여한 매칭 정보, 팀 테이블
+                        editor.putBoolean("is_login", true);
                         editor.putString("id", login_id.getText().toString());
+                        editor.putString("pw", login_pw.getText().toString());
 
+                        editor.commit();  //editor 값 저장
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }else if(result.equals("로그인실패")){
-                        Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
+                        Log.i("loginpage custom-log","로그인 실패");
 
                     }else{
-                        Toast.makeText(getApplicationContext(), "로그인 오류", Toast.LENGTH_SHORT).show();
+                        Log.i("loginpage custom-log","로그인 오류");
                     }
                 }catch (Exception e){
                     Log.i("loginpage custom-log",e.getMessage());
-                    Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
                 }
 
 
