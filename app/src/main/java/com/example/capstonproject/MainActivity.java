@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<aFriendItem> mfriendItems;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    String is_login, user_id, user_name, user_team;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
         SharedPreferences.Editor editor = USERINFO.edit();
 
+        is_login = USERINFO.getString("is_login", "로그인 안됨");
+        user_id = USERINFO.getString("id", "아이디 없음");
+        user_name = USERINFO.getString("name", "이름 없음");
+        user_team = USERINFO.getString("team", "팀 없음");
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -70,10 +76,20 @@ public class MainActivity extends AppCompatActivity {
         //처음화면
 
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
-        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
-        , USERINFO.getString("name", "")
-        , USERINFO.getString("team", ""))).commit(); //FrameLayout에 fragment.xml 띄우기
 
+        //오류확인
+        Log.i("custom-home-log", USERINFO.getString("is_login", "로그인없음"));
+        Log.i("custom-home-log", USERINFO.getString("id", "아이디없음"));
+        Log.i("custom-home-log", USERINFO.getString("name", "이름없음"));
+        Log.i("custom-home-log", USERINFO.getString("team", "팀없음"));
+
+        if(is_login.equals("로그인상태")){
+            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment(user_id, user_name, user_team)).commit();
+
+        }else{
+            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment("", "", "")).commit();
+
+        }
 
         //바텀 네비게이션뷰 안의 아이템 설정
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -83,13 +99,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.home_fragment:
                         //로그인 시도가 true일때만 유저정보 뜨게 하기, 로그인 안됐으면 빈칸
-                        if(USERINFO.getBoolean("is_login", false) == true){
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
-                                    , USERINFO.getString("name", "")
-                                    , USERINFO.getString("team", ""))).commit();
+                        if(is_login.equals("로그인상태")){
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(user_id, user_name, user_team)).commit();
 
                         }else{
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("", "", "")).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment("유저아이디", "유저이름", "유저팀")).commit();
 
                         }
                         return true;

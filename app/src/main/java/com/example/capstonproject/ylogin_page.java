@@ -37,17 +37,21 @@ public class ylogin_page extends AppCompatActivity {
                     //로그인 시도
                     yTask task = new yTask("login");
                     String result =  task.execute("a = '1'&id=" + login_id.getText() + "&pw=" + login_pw.getText()).get();
-
+                    String[] user_values = result.split(",");
                     //로그인 결과
-                    if(result.equals("로그인성공")){
+                    if(user_values[0].equals("로그인성공")){
                         
-                        USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
+                        USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
                         SharedPreferences.Editor editor = USERINFO.edit();
 
                         //들어가야할 정보 : user 테이블, 참여한 매칭 정보, 팀 테이블
-                        editor.putBoolean("is_login", true);
-                        editor.putString("id", login_id.getText().toString());
-                        editor.putString("pw", login_pw.getText().toString());
+                        editor.putString("is_login", "로그인상태");
+                        editor.putString("id", user_values[1]);
+                        editor.putString("name", user_values[2]);
+                        editor.putString("sex", user_values[3]);
+                        editor.putString("phone", user_values[4]);
+
+                        editor.putString("team", "로그인된 팀");
 
                         editor.commit();  //editor 값 저장
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
