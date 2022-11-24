@@ -2,8 +2,12 @@ package com.example.capstonproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.adapter.FragmentViewHolder;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -27,21 +31,46 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView; //바텀 네비게이션 뷰
     ActionMenuView actionMenuView;
-    Button buttonEvent;
+    Button all_match_list_btn , my_match_list_btn;
     chomeFragment chomeFragment;
     cmatch_addFragment cmatch_addFragment;
     cmatchFragment cmatchFragment;
-    cchattingFragment cchattingFragment;
+    c_all_match_listFragment c_all_match_listFragment;
+    c_my_match_listFragment c_my_match_listFragment;
     private RecyclerView mRecyclerView;
     private aMyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<aFriendItem> mfriendItems;
     private RecyclerView.LayoutManager mLayoutManager;
 
     String is_login, user_id, user_name, user_team;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //매칭 리스트 프래그먼트 전환
+        c_all_match_listFragment = new c_all_match_listFragment();
+        c_my_match_listFragment = new c_my_match_listFragment();
+
+        Button all_match_list_btn = findViewById(R.id.all_match_list_btn);
+        all_match_list_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container, c_all_match_listFragment).commit();
+            }
+        });
+
+        Button my_match_list_btn = findViewById(R.id.my_match_list_btn);
+        my_match_list_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_my_match_listFragment).commit();
+            }
+        });
+        //매칭 리스트 프래그먼트 전환
+
 
         //유저정보 스토리지
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
@@ -77,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
          **/
 
         //처음화면
-
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
 
         //오류확인
@@ -125,6 +153,18 @@ public class MainActivity extends AppCompatActivity {
 
         navigationBarView.bringToFront();
     }  //oncreate
+
+
+    //매칭 프래그먼트 전환
+    public void onFragmentChange(int num) {
+        if (num == 0) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_all_match_listFragment).commit();
+        }
+        else if (num == 1) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_my_match_listFragment).commit();
+        }
+    }
+
 
 
     //타이틀 메뉴바 관한 코드

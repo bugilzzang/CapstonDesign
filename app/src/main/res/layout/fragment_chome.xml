@@ -94,7 +94,7 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/all_match_list"
+            android:id="@+id/all_match_list_btn"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -103,43 +103,29 @@
             android:layout_toRightOf="@+id/jangbi_btn"
             android:background="@drawable/c_home_btn_background"
             android:text="매 칭"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/my_match_list"
+            android:id="@+id/my_match_list_btn"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@+id/all_match_list"
+            android:layout_toRightOf="@+id/all_match_list_btn"
             android:background="@drawable/c_home_btn_background"
             android:text="내 매칭"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 
     <FrameLayout
-        android:id="@+id/match_list"
+        android:id="@+id/match_list_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="220dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
-
-        </RelativeLayout>
 
     </FrameLayout>
 
