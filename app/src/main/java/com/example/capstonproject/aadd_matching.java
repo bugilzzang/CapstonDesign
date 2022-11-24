@@ -3,6 +3,7 @@ package com.example.capstonproject;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +35,7 @@ public class aadd_matching extends AppCompatActivity {
     DatePicker match_time;
 
 
-    String str_sex, str_excercise, str_type;
+    String str_sex, str_exercise, str_type;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,6 @@ public class aadd_matching extends AppCompatActivity {
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE); //영준
         //처음화면
 
-
-        NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
         //aad_matching 버튼 연결
         match_subject = (EditText) findViewById(R.id.match_subject);
         edittext_persons = (EditText) findViewById(R.id.edittext_persons);
@@ -76,10 +75,10 @@ public class aadd_matching extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rg_btnsoccer:
-                        str_excercise = "soccer";
+                        str_exercise = "soccer";
                         break;
                     case R.id.rg_btnfootball:
-                        str_excercise = "football";
+                        str_exercise = "football";
                         break;
                 }
             }
@@ -98,6 +97,34 @@ public class aadd_matching extends AppCompatActivity {
                 }
             }
         });
+
+        match_subject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                yTask summit_task = new yTask("addMatching");
+                String result;
+                StringBuilder param = new StringBuilder();
+                param.append("&a='1'," + "&match_owner" + USERINFO.getString("id", "")
+                + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
+                + "&match_type" + str_type + "&match_time");
+
+
+                try{
+                    result =  summit_task.execute(param.toString()).get();
+
+                    if(result.equals("성공")){
+                        Log.i("addMatching-customLog", result);
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                    }
+                }catch(Exception e){
+                    Log.i("addMatching-customLog", e.getMessage());
+                }
+
+
+            }
+        });
+
 
 
     }
