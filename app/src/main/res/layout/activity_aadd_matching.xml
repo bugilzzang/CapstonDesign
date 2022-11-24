@@ -157,7 +157,7 @@
 
                             <!--TODO : core -->
                             <RadioGroup
-                                android:id="@+id/radio_group1"
+                                android:id="@+id/radio_groupexercise"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -248,7 +248,7 @@
 
                             <!--TODO : core -->
                             <RadioGroup
-                                android:id="@+id/radio_group3"
+                                android:id="@+id/radio_groupsex"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -302,12 +302,13 @@
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 />
-
-                            <EditText
-                                android:id="@+id/edittext_time"
+                            <DatePicker
+                                android:id="@+id/match_time"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"/>
+                                android:layout_height="wrap_content"
+                                android:datePickerMode="spinner"
+                                android:calendarViewShown="false"/>
+
 
                             <!--TODO : core -->
 
