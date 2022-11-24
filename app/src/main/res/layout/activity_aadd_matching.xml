@@ -306,7 +306,7 @@
                                 android:id="@+id/match_time"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:timePickerMode="spinner"
+                                android:timePickerMode="spinner"/>
 
 
                             <!--TODO : core -->

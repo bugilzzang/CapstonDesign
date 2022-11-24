@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         c_all_match_listFragment = new c_all_match_listFragment();
         c_my_match_listFragment = new c_my_match_listFragment();
 
-        Button all_match_list_btn = findViewById(R.id.all_match_list_btn);
+        all_match_list_btn = (Button) findViewById(R.id.all_match_list_btn);  //동훈 수정할 것 널포인트 에러
         all_match_list_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
