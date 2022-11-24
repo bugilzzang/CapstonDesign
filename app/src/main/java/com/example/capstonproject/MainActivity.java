@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         user_name = USERINFO.getString("name", "이름 없음");
         user_team = USERINFO.getString("team", "팀 없음");
 
+
+        /**
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         mRecyclerAdapter = new aMyRecyclerAdapter();
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         mRecyclerAdapter.setFriendList(mfriendItems);
+         **/
 
         //처음화면
 
