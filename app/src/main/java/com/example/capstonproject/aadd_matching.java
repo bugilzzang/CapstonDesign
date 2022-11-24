@@ -11,6 +11,7 @@ import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -28,7 +29,7 @@ public class aadd_matching extends AppCompatActivity {
     cmatch_addFragment cmatch_addFragment;
     cmatchFragment cmatchFragment;
     EditText match_subject, edittext_persons, edittext_major;
-    Button rg_btn_mercenary, rg_btn_rival, rg_btnsoccer,rg_btnfootball,rg_btnman ,rg_btnfemale;
+    Button btn_ok;
     RadioGroup radio_groupsex, radio_groupexercise, radio_group_type;
     DatePicker match_time;
 
@@ -49,13 +50,8 @@ public class aadd_matching extends AppCompatActivity {
         match_subject = (EditText) findViewById(R.id.match_subject);
         edittext_persons=(EditText) findViewById(R.id.edittext_persons);
         edittext_major =(EditText) findViewById(R.id.edittext_major);
-        rg_btn_mercenary= (Button) findViewById(R.id.rg_btn_mercenary);
-        rg_btn_rival = (Button) findViewById(R.id.rg_btn_rival);
-        rg_btnsoccer = (Button) findViewById(R.id.rg_btnsoccer);
-        rg_btnfootball = (Button) findViewById(R.id.rg_btnfootball);
-        rg_btnman = (Button) findViewById(R.id.rg_btnman);
-        rg_btnfemale = (Button) findViewById(R.id.rg_btnfemale);
         radio_groupsex = (RadioGroup) findViewById(R.id.radio_groupsex);
+        btn_ok= (Button) findViewById(R.id.btn_ok);
         radio_groupexercise = (RadioGroup) findViewById(R.id.radio_groupexercise);
         radio_group_type = (RadioGroup) findViewById(R.id.radio_group_type);
         match_time=(DatePicker) findViewById(R.id.match_time);
@@ -66,7 +62,7 @@ public class aadd_matching extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.rg_btnman:
-                        str_sex = "male";
+                        str_sex = "man";
                         break;
                     case R.id.rg_btnfemale:
                         str_sex = "female";
