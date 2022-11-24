@@ -80,49 +80,45 @@
                     android:id="@+id/tableLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_margin="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/question_type"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="매칭 유형"
-                            android:textStyle="bold"
                             android:textSize="17dp"
-                            />
-
+                            android:textStyle="bold" />
 
 
                         <!--TODO : core -->
                         <RadioGroup
                             android:id="@+id/radio_group_type"
-                            android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
-                                android:checked="false"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="용병"
-                                android:layout_marginLeft="40dp"
                                 android:id="@+id/rg_btn_mercenary"
-                                />
-
-                            <RadioButton
-                                android:checked="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="상대팀"
+                                android:layout_marginLeft="40dp"
+                                android:checked="false"
+                                android:text="용병" />
+
+                            <RadioButton
+                                android:id="@+id/rg_btn_rival"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="50dp"
-                                android:id="@+id/rg_btn_rival" />
+                                android:checked="true"
+                                android:text="상대팀" />
 
                         </RadioGroup>
 
@@ -132,53 +128,50 @@
 
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/layout_title1"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_marginBottom="10dp">
 
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/question1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="운동 종목"
-                                android:textStyle="bold"
                                 android:textSize="17dp"
-                                />
-
+                                android:textStyle="bold" />
 
 
                             <!--TODO : core -->
                             <RadioGroup
                                 android:id="@+id/radio_groupexercise"
-                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                >
+                                android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:checked="false"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="축구"
-                                    android:layout_marginLeft="40dp"
                                     android:id="@+id/rg_btnsoccer"
-                                    />
-
-                                <RadioButton
-                                    android:checked="true"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="풋살"
+                                    android:layout_marginLeft="40dp"
+                                    android:checked="false"
+                                    android:text="축구" />
+
+                                <RadioButton
+                                    android:id="@+id/rg_btnfootball"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginLeft="50dp"
-                                    android:id="@+id/rg_btnfootball" />
+                                    android:checked="true"
+                                    android:text="풋살" />
 
                             </RadioGroup>
 
@@ -187,34 +180,35 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/layout_title5"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_marginBottom="10dp">
 
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/question_persons"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="인원"
                                 android:gravity="center"
-                                android:textStyle="bold"
+                                android:text="인원"
                                 android:textSize="17dp"
-                                />
+                                android:textStyle="bold" />
 
                             <EditText
                                 android:id="@+id/edittext_persons"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"/>
+                                android:layout_marginLeft="30dp" />
 
                             <!--TODO : core -->
 
@@ -223,53 +217,50 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/layout_title3"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_marginBottom="10dp">
 
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/question3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="성별"
-                                android:textStyle="bold"
                                 android:textSize="17dp"
-                                />
-
+                                android:textStyle="bold" />
 
 
                             <!--TODO : core -->
                             <RadioGroup
                                 android:id="@+id/radio_groupsex"
-                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                >
+                                android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:checked="false"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="남자"
-                                    android:layout_marginLeft="76dp"
                                     android:id="@+id/rg_btnman"
-                                    />
-
-                                <RadioButton
-                                    android:checked="true"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="여자"
+                                    android:layout_marginLeft="76dp"
+                                    android:checked="false"
+                                    android:text="남자" />
+
+                                <RadioButton
+                                    android:id="@+id/rg_btnfemale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginLeft="50dp"
-                                    android:id="@+id/rg_btnfemale" />
+                                    android:checked="true"
+                                    android:text="여자" />
 
                             </RadioGroup>
 
@@ -281,33 +272,41 @@
 
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/layout_title5"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:orientation="vertical">
 
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/question5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="시간"
                                 android:gravity="center"
-                                android:textStyle="bold"
+                                android:text="시간"
                                 android:textSize="17dp"
-                                />
+                                android:textStyle="bold" />
+
                             <DatePicker
+                                android:id="@+id/match_day"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:calendarViewShown="false"
+                                android:datePickerMode="spinner" />
+
+                            <TimePicker
                                 android:id="@+id/match_time"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:datePickerMode="spinner"
-                                android:calendarViewShown="false"/>
+                                android:timePickerMode="spinner"/>
 
 
                             <!--TODO : core -->
@@ -386,15 +385,5 @@
             android:padding="8dp"
             android:text="작성완료" />
     </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/c_button_background"
-        app:itemIconTint="@color/c_menu_bottom_color"
-        app:itemTextColor="@color/c_menu_bottom_color"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/c_menu" />
+
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.capstonproject;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -35,6 +36,7 @@ public class chomeFragment extends Fragment {
     }
 
 
+    Context ct;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +51,27 @@ public class chomeFragment extends Fragment {
         user_major.setText(major);
         user_team = (TextView) view.findViewById(R.id.user_team);
         user_team.setText(team);
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+
+        mRecyclerAdapter = new aMyRecyclerAdapter();
+
+
+        mRecyclerView.setAdapter(mRecyclerAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(ct = container.getContext()));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(ct = container.getContext(), RecyclerView.VERTICAL,false));
+
+        mfriendItems = new ArrayList<>();
+        for(int i=1;i<=10;i++){
+            if(i%2==0) {
+
+                mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
+            }
+            else {
+                mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, i + "번째 사람", i + "번째 상태메시지"));
+            }
+        }
+        mRecyclerAdapter.setFriendList(mfriendItems);
 
         return view;
     }
