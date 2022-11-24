@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CapstonProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".a_myinfo"
+            android:exported="false" />
+        <activity
             android:name=".aadd_matching"
             android:exported="false" />
         <activity
