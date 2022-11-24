@@ -41,6 +41,8 @@
         <entry key="app/src/main/res/layout/c_my_matching_list.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/fragment_a_add_mahcting.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_a_add_matching.xml" value="0.1828774062816616" />
+        <entry key="app/src/main/res/layout/fragment_c_all_match_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_c_my_match_list.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_chome.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_cmatch.xml" value="0.1828774062816616" />
         <entry key="app/src/main/res/menu/c_menu.xml" value="0.37025641025641026" />
