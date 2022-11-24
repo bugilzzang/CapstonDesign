@@ -77,6 +77,7 @@
         <SearchView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#eeeeee"
             android:layout_below="@id/jangbi_btn"/>
 
 
@@ -86,52 +87,60 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/c_home_btn_background"
             android:text="장비 대여"
             android:textStyle="bold"
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/all_match_list"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_toRightOf="@+id/jangbi_btn"
             android:background="@drawable/c_home_btn_background"
-            android:text="내 매칭"
+            android:text="매 칭"
             android:textStyle="bold"
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/my_match_list"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/btn1"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/all_match_list"
             android:background="@drawable/c_home_btn_background"
-            android:text="최근 전적"
+            android:text="내 매칭"
             android:textStyle="bold"
             android:textColor="@color/white"/>
     </RelativeLayout>
 
-    <RelativeLayout
+
+    <FrameLayout
+        android:id="@+id/match_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
-        android:orientation="vertical">
+        android:layout_marginTop="220dp">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
-
-    </RelativeLayout>
+            android:orientation="vertical">
 
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
+        </RelativeLayout>
+
+    </FrameLayout>
 
 </FrameLayout>

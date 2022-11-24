@@ -48,19 +48,19 @@ public class aadd_matching extends AppCompatActivity {
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
         //aad_matching 버튼 연결
         match_subject = (EditText) findViewById(R.id.match_subject);
-        edittext_persons=(EditText) findViewById(R.id.edittext_persons);
-        edittext_major =(EditText) findViewById(R.id.edittext_major);
+        edittext_persons = (EditText) findViewById(R.id.edittext_persons);
+        edittext_major = (EditText) findViewById(R.id.edittext_major);
         radio_groupsex = (RadioGroup) findViewById(R.id.radio_groupsex);
-        btn_ok= (Button) findViewById(R.id.btn_ok);
+        btn_ok = (Button) findViewById(R.id.btn_ok);
         radio_groupexercise = (RadioGroup) findViewById(R.id.radio_groupexercise);
         radio_group_type = (RadioGroup) findViewById(R.id.radio_group_type);
-        match_time=(DatePicker) findViewById(R.id.match_time);
+        match_time = (DatePicker) findViewById(R.id.match_time);
 
 
         radio_groupsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rg_btnman:
                         str_sex = "man";
                         break;
@@ -74,7 +74,7 @@ public class aadd_matching extends AppCompatActivity {
         radio_groupexercise.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rg_btnsoccer:
                         str_excercise = "soccer";
                         break;
@@ -88,7 +88,7 @@ public class aadd_matching extends AppCompatActivity {
         radio_group_type.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rg_btn_mercenary:
                         str_type = "merecenary";
                         break;
@@ -100,33 +100,6 @@ public class aadd_matching extends AppCompatActivity {
         });
 
 
-
-
-        //바텀 네비게이션뷰 안의 아이템 설정
-        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-                    case R.id.home_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(USERINFO.getString("id", "")
-                                , USERINFO.getString("name", "")
-                                , USERINFO.getString("team", ""))).commit();
-                        return true;
-                    case R.id.match_add_fragment:
-                        //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();
-                        Intent intent = new Intent(getApplicationContext(),aadd_matching.class);
-                        startActivity(intent);
-                        return true;
-                    case R.id.chatting_fragment:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cchattingFragment()).commit();
-                        return true;
-                }
-                return false;
-            }
-        });
-
-        navigationBarView.bringToFront();
-    }  //oncreate
+    }
 
 }
