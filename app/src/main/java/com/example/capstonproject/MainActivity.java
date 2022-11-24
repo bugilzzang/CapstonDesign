@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.match_add_fragment:
                         //getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new cmatch_addFragment()).commit();
-                        Intent intent = new Intent(getApplicationContext(),a_add_match.class);
+                        Intent intent = new Intent(getApplicationContext(),aadd_matching.class);
                         startActivity(intent);
                         return true;
                     case R.id.chatting_fragment:

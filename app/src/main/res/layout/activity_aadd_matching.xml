@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".a_add_match">
+    >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -57,7 +57,7 @@
                     android:text="작성자"/>
 
                 <EditText
-                    android:id="@+id/date_tv"
+                    android:id="@+id/match_subject"
                     android:padding="16dp"
                     android:background="#eeeeee"
                     android:layout_width="match_parent"
@@ -83,6 +83,52 @@
                     android:orientation="vertical"
                     >
 
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/question_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="매칭 유형"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            />
+
+
+
+                        <!--TODO : core -->
+                        <RadioGroup
+                            android:id="@+id/radio_group_type"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+                            <RadioButton
+                                android:checked="false"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="용병"
+                                android:layout_marginLeft="40dp"
+                                android:id="@+id/rg_btn_mercenary"
+                                />
+
+                            <RadioButton
+                                android:checked="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="상대팀"
+                                android:layout_marginLeft="50dp"
+                                android:id="@+id/rg_btn_rival" />
+
+                        </RadioGroup>
+
+                        <!--TODO : core -->
+
+                    </LinearLayout>
 
 
                     <LinearLayout
@@ -142,7 +188,7 @@
 
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_below="@+id/layout_title2"
+                        android:layout_below="@+id/layout_title5"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
@@ -155,42 +201,20 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <TextView
-                                android:id="@+id/question2"
+                                android:id="@+id/question_persons"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="인원수"
+                                android:layout_height="match_parent"
+                                android:text="인원"
+                                android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 />
 
-
-
-                            <!--TODO : core -->
-                            <RadioGroup
-                                android:id="@+id/radio_group2"
-                                android:orientation="horizontal"
+                            <EditText
+                                android:id="@+id/edittext_persons"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                >
-
-                                <RadioButton
-                                    android:checked="false"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="6 vs 6"
-                                    android:layout_marginLeft="60dp"
-                                    android:id="@+id/rg_btn6vs6"
-                                    />
-
-                                <RadioButton
-                                    android:checked="true"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="11 vs 11"
-                                    android:layout_marginLeft="40dp"
-                                    android:id="@+id/rg_btn11vs11" />
-
-                            </RadioGroup>
+                                android:layout_marginLeft="30dp"/>
 
                             <!--TODO : core -->
 
@@ -255,70 +279,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_below="@+id/layout_title4"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:id="@+id/question4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="실력"
-                                android:textStyle="bold"
-                                android:textSize="17dp"
-                                />
-
-
-
-                            <!--TODO : core -->
-                            <RadioGroup
-                                android:id="@+id/radio_group"
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <RadioButton
-                                    android:checked="false"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="상"
-                                    android:layout_marginLeft="76dp"
-                                    android:id="@+id/rg_btnhigh"
-                                    />
-                                <RadioButton
-                                    android:checked="false"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="중"
-                                    android:layout_marginLeft="35dp"
-                                    android:id="@+id/rg_btnmiddle"
-                                    />
-
-                                <RadioButton
-                                    android:checked="true"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="하"
-                                    android:layout_marginLeft="30dp"
-                                    android:id="@+id/rg_btnlow" />
-
-                            </RadioGroup>
-
-                            <!--TODO : core -->
-
-                        </LinearLayout>
-
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_below="@+id/layout_title5"
@@ -337,13 +297,14 @@
                                 android:id="@+id/question5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="참가비"
+                                android:text="시간"
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="17dp"
                                 />
 
                             <EditText
+                                android:id="@+id/edittext_time"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="30dp"/>
@@ -355,39 +316,40 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/layout_title"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_marginBottom="10dp">
 
 
                         <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_below="@+id/layout_title6"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_marginBottom="10dp">
 
 
                             <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_margin="10dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:orientation="horizontal">
+
                                 <TextView
                                     android:id="@+id/question6"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:text="학과"
-                                    android:textStyle="bold"
                                     android:textSize="17dp"
-                                    />
+                                    android:textStyle="bold" />
 
                                 <EditText
+                                    android:id="@+id/edittext_major"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_marginLeft="50dp"/>
+                                    android:layout_marginLeft="50dp" />
 
                                 <!--TODO : core -->
 
