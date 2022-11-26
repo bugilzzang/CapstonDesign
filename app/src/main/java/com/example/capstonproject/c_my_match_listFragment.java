@@ -15,7 +15,7 @@ public class c_my_match_listFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_c_my_match_list,container,false);
-        return rootView;
+        ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_c_my_match_list,container,false);
+        return view;
     }
 }

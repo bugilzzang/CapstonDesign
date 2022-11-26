@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
     chomeFragment chomeFragment;
     cmatch_addFragment cmatch_addFragment;
     cmatchFragment cmatchFragment;
-    c_all_match_listFragment c_all_match_listFragment;
-    c_my_match_listFragment c_my_match_listFragment;
+
     private RecyclerView mRecyclerView;
     private aMyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<aFriendItem> mfriendItems;
@@ -50,26 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //매칭 리스트 프래그먼트 전환
-        c_all_match_listFragment = new c_all_match_listFragment();
-        c_my_match_listFragment = new c_my_match_listFragment();
-
-        all_match_list_btn = (Button) findViewById(R.id.all_match_list_btn);  //동훈 수정할 것 널포인트 에러
-        all_match_list_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container, c_all_match_listFragment).commit();
-            }
-        });
-
-        Button my_match_list_btn = findViewById(R.id.my_match_list_btn);
-        my_match_list_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_my_match_listFragment).commit();
-            }
-        });
-        //매칭 리스트 프래그먼트 전환
 
 
         //유저정보 스토리지
@@ -155,15 +134,7 @@ public class MainActivity extends AppCompatActivity {
     }  //oncreate
 
 
-    //매칭 프래그먼트 전환
-    public void onFragmentChange(int num) {
-        if (num == 0) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_all_match_listFragment).commit();
-        }
-        else if (num == 1) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.match_list_container,c_my_match_listFragment).commit();
-        }
-    }
+
 
 
 
