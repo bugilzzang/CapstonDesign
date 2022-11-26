@@ -14,7 +14,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class a_myinfo extends AppCompatActivity {
     TextView tv_name, tv_id, tv_sex, tv_tel, tv_major;
-    Button btn_backtohome;
+    Button reload_myinfo, btn_backtohome;
     SharedPreferences USERINFO = getSharedPreferences("USERINFO",MODE_PRIVATE);
 
 
@@ -28,12 +28,25 @@ public class a_myinfo extends AppCompatActivity {
         tv_sex = (TextView) findViewById(R.id.tv_sex);
         tv_tel = (TextView) findViewById(R.id.tv_tel);
         tv_major = (TextView) findViewById(R.id.tv_major);
+        btn_backtohome = (Button) findViewById(R.id.btn_backtohome);
+        reload_myinfo = (Button) findViewById(R.id.reload_myinfo);
 
         tv_name.setText(USERINFO.getString("name", "이름없음"));
+        tv_id.setText(USERINFO.getString("id", "id없음"));
+        tv_sex.setText(USERINFO.getString("sex", "성별없음"));
+        tv_tel.setText(USERINFO.getString("phone", "폰 번호 없음"));
+        tv_major.setText(USERINFO.getString("major", "학과없음"));
 
 
+        reload_myinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
 
-        btn_backtohome = (Button) findViewById(R.id.btn_backtohome);
         btn_backtohome.setOnClickListener(new View.OnClickListener(){
 
             @Override

@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,17 +30,14 @@ public class chomeFragment extends Fragment {
     private ArrayList<aFriendItem> mfriendItems;
     String id, major, team;
     Button all_match_list_btn, my_match_list_btn;
-    c_all_match_listFragment c_all_match_listFragment;
-    c_my_match_listFragment c_my_match_listFragment;
 
     chomeFragment chomeFragment = this;
 
     TextView user_name, user_major, user_team;
-    public chomeFragment(String id, String major, String team){
+    public chomeFragment(String id, String major){
         super();
         this.id = id;
         this.major = major;
-        this.team = team;
     }
 
 
@@ -50,7 +48,14 @@ public class chomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
+        //매칭정보 요청
+        try{
+            String request; //모든 매칭 정보 요청
+            yTask ytask = new yTask("match_info");
+            String result = ytask.execute().get();
+        }catch (Exception e){
+            Log.i("chome-customLog", e.getMessage());
+        }
         //USERINFO = getSharedPreferences("Userinfo", MODE_PRIVATE);
         View view = inflater.inflate(R.layout.fragment_chome, container, false);
 
@@ -62,12 +67,9 @@ public class chomeFragment extends Fragment {
         user_name.setText(id);
         user_major = (TextView) view.findViewById(R.id.user_major);
         user_major.setText(major);
-        user_team = (TextView) view.findViewById(R.id.user_team);
-        user_team.setText(team);
 
 
 
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.match_list_container);
 
@@ -98,6 +100,19 @@ public class chomeFragment extends Fragment {
         all_match_list_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String result;
+                try{
+                    SharedPreferences USERINFO = ct.getSharedPreferences("USERINFO", MODE_PRIVATE);
+                    String request; //내 매칭만 정보 요청
+                    // 매칭 번호, 매칭 제목,
+                    yTask ytask = new yTask("match_info");
+                    result = ytask.execute(USERINFO.getString("id", "")).get();
+                }catch (Exception e){
+                    Log.i("chome-customLog", e.getMessage());
+                }
+
+
+                //매칭리스트 reload시점
                 mfriendItems.clear();
                 for(int i=1;i<=10;i++){
                     if(i%2==0) {
@@ -133,13 +148,5 @@ public class chomeFragment extends Fragment {
 
 
         return view;
-    }
-
-    public void set_all_match_list(){
-
-    }
-
-    public void set_my_match_list(){
-
     }
 }

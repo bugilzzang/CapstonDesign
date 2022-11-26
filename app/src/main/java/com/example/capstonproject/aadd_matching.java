@@ -12,9 +12,11 @@ import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,10 +34,10 @@ public class aadd_matching extends AppCompatActivity {
     EditText match_subject, edittext_persons, edittext_major;
     Button btn_ok;
     RadioGroup radio_groupsex, radio_groupexercise, radio_group_type;
-    DatePicker match_time;
+    NumberPicker match_day, match_month;
+    TimePicker match_time;
 
-
-    String str_sex, str_exercise, str_type;
+    String str_sex, str_exercise, str_type, str_month, str_day, str_hour, str_minute, str_time, str_major;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class aadd_matching extends AppCompatActivity {
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE); //영준
         //처음화면
 
+
+
         //aad_matching 버튼 연결
         match_subject = (EditText) findViewById(R.id.match_subject);
         edittext_persons = (EditText) findViewById(R.id.edittext_persons);
@@ -53,7 +57,58 @@ public class aadd_matching extends AppCompatActivity {
         btn_ok = (Button) findViewById(R.id.btn_ok);
         radio_groupexercise = (RadioGroup) findViewById(R.id.radio_groupexercise);
         radio_group_type = (RadioGroup) findViewById(R.id.radio_group_type);
-        match_time = (DatePicker) findViewById(R.id.match_time);
+        match_month = (NumberPicker) findViewById(R.id.match_month);
+        match_day = (NumberPicker) findViewById(R.id.match_day);
+        match_time = (TimePicker) findViewById(R.id.match_time);
+
+        
+        //매칭 날짜 설정
+        match_month.setMaxValue(12);
+        match_month.setMinValue(1);
+        match_day.setMaxValue(31);
+        match_day.setMinValue(1);
+
+        match_month.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal>=10){
+                    str_month += newVal;
+                }else{
+                    str_month += "0" + newVal;
+                }
+            }
+        });
+
+        match_day.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                if(newVal>=10){
+                    str_day += newVal;
+                }else{
+                    str_day += "0" + newVal;
+                }
+            }
+        });
+
+        //시간설정
+        match_time.setIs24HourView(true);
+        match_time.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+            if(hourOfDay>=10){
+                str_hour += hourOfDay;
+            }else{
+                str_hour += "0" + hourOfDay;
+            }
+
+            if(minute >= 10){
+                str_minute += minute;
+            }else{
+                str_minute += "0" + minute;
+            }
+
+            }
+        });
 
 
         radio_groupsex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -101,15 +156,19 @@ public class aadd_matching extends AppCompatActivity {
         match_subject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                yTask summit_task = new yTask("addMatching");
-                String result;
-                StringBuilder param = new StringBuilder();
-                param.append("&a='1'," + "&match_owner" + USERINFO.getString("id", "")
-                + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
-                + "&match_type" + str_type + "&match_time");
+                str_time = str_month + str_day + str_hour + str_minute;
+                str_major = edittext_major.getText().toString();
 
 
                 try{
+                    yTask summit_task = new yTask("addMatching");
+                    String result;
+                    StringBuilder param = new StringBuilder();
+                    param.append("&a='1'," + "&match_owner=" + USERINFO.getString("id", "")
+                            + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
+                            + "&match_type=" + str_type + "&match_time=" + str_time
+                            + "&match_major=" + str_major);
+
                     result =  summit_task.execute(param.toString()).get();
 
                     if(result.equals("성공")){

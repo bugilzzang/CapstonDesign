@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/longin_btn"
+        android:id="@+id/login_btn"
         android:title="로그인"
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/action_btn1"
+        android:id="@+id/my_info_btn"
         android:title="내정보"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_btn2"
+        android:id="@+id/logout_btn"
         android:title="로그아웃"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_btn3"
+        android:id="@+id/setting_btn"
         android:title="설정"
         app:showAsAction="never"/>
 

@@ -294,13 +294,34 @@
                                 android:text="시간"
                                 android:textSize="17dp"
                                 android:textStyle="bold" />
-
-                            <DatePicker
-                                android:id="@+id/match_day"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:calendarViewShown="false"
-                                android:datePickerMode="spinner" />
+                                android:layout_gravity="center"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="월"
+                                    android:layout_marginRight="10dp"/>
+                                <NumberPicker
+                                    android:id="@+id/match_month"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="30dp"
+                                />
+                                <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="일"
+                                android:layout_marginRight="10dp"/>
+                                <NumberPicker
+                                    android:id="@+id/match_day"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    />
+                            </LinearLayout>
 
                             <TimePicker
                                 android:id="@+id/match_time"
