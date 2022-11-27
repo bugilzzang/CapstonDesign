@@ -167,7 +167,7 @@ public class aadd_matching extends AppCompatActivity {
                     param.append("&a='1'," + "&match_owner=" + USERINFO.getString("id", "")
                             + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
                             + "&match_type=" + str_type + "&match_time=" + str_time
-                            + "&match_major=" + str_major);
+                            + "&match_sex=" + str_sex+ "&match_major=" + edittext_major.getText().toString());
 
                     result =  summit_task.execute(param.toString()).get();
 
