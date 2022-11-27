@@ -37,31 +37,22 @@
             <TextView
                 android:id="@+id/user_id"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:text="@string/userid"
                 android:textColor="@color/white"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/user_major"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_below="@id/user_id"
                 android:text="@string/user_major"
                 android:textColor="@color/white"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/user_team"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="@string/team"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:layout_below="@id/user_major"/>
 
         </RelativeLayout>
 

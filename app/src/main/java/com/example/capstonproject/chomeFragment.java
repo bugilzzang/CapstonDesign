@@ -6,43 +6,43 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 public class chomeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private aMyRecyclerAdapter mRecyclerAdapter;
     private ArrayList<aFriendItem> mfriendItems;
-    String id, major, team;
+    String id, name, major;
     Button all_match_list_btn, my_match_list_btn;
+    Context ct;
 
-    chomeFragment chomeFragment = this;
-
-    TextView user_name, user_major, user_team;
-    public chomeFragment(String id, String major){
+    TextView  user_name, user_major;
+    public chomeFragment(String id, String name, String major){
         super();
         this.id = id;
+        this.name = name;
         this.major = major;
     }
 
 
-
-    Context ct;
+    String[] matchlist;
+    String[] match_tag;
+    HashMap<String, String> matchMap = new HashMap<String, String>();
+    Set<String> keySet = matchMap.keySet();
+    String match_value = "";
+    String[] m_values;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +52,15 @@ public class chomeFragment extends Fragment {
         try{
             String request; //모든 매칭 정보 요청
             yTask ytask = new yTask("match_info");
-            String result = ytask.execute().get();
+            String result = ytask.execute("&a=1"+ "&user_id=" + id).get();
+            //매칭번호: 생성자이름, 제목 순서, 성별
+            //매칭정보 저장
+            matchlist = result.split("/");
+            for(String matchs : matchlist){
+                match_tag = matchs.split(":");
+                matchMap.put(match_tag[0], match_tag[1]);
+            }
+
         }catch (Exception e){
             Log.i("chome-customLog", e.getMessage());
         }
@@ -64,7 +72,7 @@ public class chomeFragment extends Fragment {
 
 
         user_name = (TextView) view.findViewById(R.id.user_id);
-        user_name.setText(id);
+        user_name.setText(name);
         user_major = (TextView) view.findViewById(R.id.user_major);
         user_major.setText(major);
 
@@ -81,15 +89,24 @@ public class chomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(ct = container.getContext(), RecyclerView.VERTICAL,false));
 
         mfriendItems = new ArrayList<>();
-        for(int i=1;i<=10;i++){
-            if(i%2==0) {
 
-                mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
+        //
+
+
+        for(String matchs : keySet){
+            match_value = matchMap.get(matchs);
+            //[0] : 생성자 이름, [1]: 제목, [2]: 성별
+            m_values = match_value.split(",");
+
+            if(m_values[2].equals("female")) {
+
+                mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
             }
             else {
-                mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, i + "번째 사람", i + "번째 상태메시지"));
+                mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
             }
         }
+
         mRecyclerAdapter.setFriendList(mfriendItems);
 
 
@@ -102,25 +119,36 @@ public class chomeFragment extends Fragment {
             public void onClick(View v) {
                 String result;
                 try{
-                    SharedPreferences USERINFO = ct.getSharedPreferences("USERINFO", MODE_PRIVATE);
-                    String request; //내 매칭만 정보 요청
-                    // 매칭 번호, 매칭 제목,
+                    matchMap.clear();
+                    String request; //모든 매칭 정보 요청
                     yTask ytask = new yTask("match_info");
-                    result = ytask.execute(USERINFO.getString("id", "")).get();
+                    result = ytask.execute("&a=1"+ "&user_id=" + id).get();
+                    //매칭번호: 생성자이름, 제목 순서, 성별
+                    //매칭정보 저장
+                    matchlist = result.split("/");
+                    for(String matchs : matchlist){
+                        match_tag = matchs.split(":");
+                        matchMap.put(match_tag[0], match_tag[1]);
+
+                    }
                 }catch (Exception e){
-                    Log.i("chome-customLog", e.getMessage());
+                    Log.i("chome-allmatchlistLog", e.getMessage());
                 }
 
 
                 //매칭리스트 reload시점
                 mfriendItems.clear();
-                for(int i=1;i<=10;i++){
-                    if(i%2==0) {
+                for(String matchs : keySet){
+                    match_value = matchMap.get(matchs);
+                    //[0] : 생성자 이름, [1]: 제목, [2]: 성별
+                    m_values = match_value.split(",");
 
-                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
+                    if(m_values[2].equals("female")) {
+
+                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, i + "번째 사람", i + "번째 상태메시지"));
+                        mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);
@@ -128,17 +156,49 @@ public class chomeFragment extends Fragment {
             }
         });
 
+
+
+
+
+
+
         my_match_list_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mfriendItems.clear();
-                for(int i=1;i<=10;i++){
-                    if(i%2==0) {
 
-                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
+                String result;
+                try{
+                    matchMap.clear();
+                    SharedPreferences USERINFO = ct.getSharedPreferences("USERINFO", MODE_PRIVATE);
+                    String request; //내 매칭만 정보 요청
+                    //매칭번호: 생성자이름, 제목 순서, 성별
+                    //매칭정보 저장
+                    yTask ytask = new yTask("my_match_info");
+                    result = ytask.execute("&a=1"+ "&user_id=" + id).get();
+
+                    matchlist = result.split("/");
+                    for(String matchs : matchlist){
+                        match_tag = matchs.split(":");
+                        matchMap.put(match_tag[0], match_tag[1]);
+                    }
+                }catch (Exception e){
+                    Log.i("chome-mymatchlistLog", e.getMessage());
+                }
+
+
+                //매칭리스트 reload시점
+                mfriendItems.clear();
+                for(String matchs : keySet){
+                    match_value = matchMap.get(matchs);
+                    //[0] : 생성자 이름, [1]: 제목, [2]: 성별
+                    m_values = match_value.split(",");
+
+                    if(m_values[2].equals("female")) {
+
+                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
+                        mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);

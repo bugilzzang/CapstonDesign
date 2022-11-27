@@ -36,12 +36,8 @@ public class MainActivity extends AppCompatActivity {
     cmatch_addFragment cmatch_addFragment;
     cmatchFragment cmatchFragment;
 
-    private RecyclerView mRecyclerView;
-    private aMyRecyclerAdapter mRecyclerAdapter;
-    private ArrayList<aFriendItem> mfriendItems;
-    private RecyclerView.LayoutManager mLayoutManager;
 
-    String is_login, user_name, user_major;
+    String is_login, user_id, user_name, user_major;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,35 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         //유저정보 스토리지
         SharedPreferences USERINFO = getSharedPreferences("USERINFO", MODE_PRIVATE);
-        SharedPreferences.Editor editor = USERINFO.edit();
 
         is_login = USERINFO.getString("is_login", "로그인 안됨");
+        user_id = USERINFO.getString("id", "id 없음");
         user_name = USERINFO.getString("name", "이름 없음");
         user_major = USERINFO.getString("major", "팀 없음");
-
-
-        /**
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-
-        mRecyclerAdapter = new aMyRecyclerAdapter();
-
-
-        mRecyclerView.setAdapter(mRecyclerAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
-
-        mfriendItems = new ArrayList<>();
-        for(int i=1;i<=10;i++){
-            if(i%2==0) {
-
-                mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, i + "번째 사람", i + "번째 상태메시지"));
-            }
-            else {
-                mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, i + "번째 사람", i + "번째 상태메시지"));
-            }
-        }
-        mRecyclerAdapter.setFriendList(mfriendItems);
-         **/
 
         //처음화면
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavi);
@@ -93,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i("custom-home-log", USERINFO.getString("team", "팀없음"));
 
         if(is_login.equals("로그인상태")){
-            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment(user_name, user_major)).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment(user_id, user_name, user_major)).commit();
 
         }else{
-            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment( "", "")).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new chomeFragment( "", "", "")).commit();
 
         }
 
@@ -109,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home_fragment:
                         //로그인 시도가 true일때만 유저정보 뜨게 하기, 로그인 안됐으면 빈칸
                         if(is_login.equals("로그인상태")){
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(user_name, user_major)).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment(user_id, user_name, user_major)).commit();
 
                         }else{
-                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment( "유저이름", "유저학과")).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new chomeFragment( "유저아이디", "유저이름", "유저학과")).commit();
 
                         }
                         return true;
