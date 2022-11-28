@@ -95,15 +95,15 @@ public class chomeFragment extends Fragment {
 
         for(String matchs : keySet){
             match_value = matchMap.get(matchs);
+            //matchs -> 매칭 번호
             //[0] : 생성자 이름, [1]: 제목, [2]: 성별
             m_values = match_value.split(",");
 
             if(m_values[2].equals("female")) {
-
-                mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
             }
             else {
-                mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
             }
         }
 
@@ -145,10 +145,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);
@@ -195,10 +195,10 @@ public class chomeFragment extends Fragment {
 
                     if(m_values[2].equals("female")) {
 
-                        mfriendItems.add(new aFriendItem(R.drawable.afemaleimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.afemaleimage, m_values[0], m_values[1]));
                     }
                     else {
-                        mfriendItems.add(new aFriendItem(R.drawable.amerecenaryimage, m_values[0], m_values[1]));
+                        mfriendItems.add(new aFriendItem(matchs, R.drawable.amerecenaryimage, m_values[0], m_values[1]));
                     }
                 }
                 mRecyclerAdapter.setFriendList(mfriendItems);

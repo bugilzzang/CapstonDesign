@@ -37,7 +37,7 @@ public class aadd_matching extends AppCompatActivity {
     NumberPicker match_day, match_month;
     TimePicker match_time;
 
-    String str_sex, str_exercise, str_type, str_month, str_day, str_hour, str_minute, str_time, str_major;
+    String str_sex = "", str_exercise = "", str_type = "", str_month= "", str_day= "", str_hour= "", str_minute= "", str_time= "", str_major= "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,7 +153,7 @@ public class aadd_matching extends AppCompatActivity {
             }
         });
 
-        match_subject.setOnClickListener(new View.OnClickListener() {
+        btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 str_time = str_month + str_day + str_hour + str_minute;
@@ -166,7 +166,7 @@ public class aadd_matching extends AppCompatActivity {
                     StringBuilder param = new StringBuilder();
                     param.append("&a='1'," + "&match_owner=" + USERINFO.getString("id", "")
                             + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
-                            + "&match_type=" + str_type + "&match_time=" + str_time
+                            + "&match_type=" + str_type + "&match_time=" + str_time + "&match_persons=" + edittext_persons.getText()
                             + "&match_sex=" + str_sex+ "&match_major=" + edittext_major.getText().toString());
 
                     result =  summit_task.execute(param.toString()).get();

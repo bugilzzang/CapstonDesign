@@ -26,11 +26,19 @@
                     android:id="@+id/btnback"
                     android:layout_width="45dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="0"
                     android:padding="16dp"
                     android:src="@drawable/backimage" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/match_number"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="45dp"
+                    android:layout_weight="0"
                     android:layout_height="wrap_content"
                     android:gravity="right">
                     <ImageButton
@@ -93,12 +101,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         //(매칭종목)
+
+                        //인원
+
                         <ImageButton
                             android:id="@+id/BtnNum0"
-                            android:layout_weight="1"
                             android:layout_marginTop="15dp"
+                            android:layout_weight="1"
                             android:src="@drawable/matchimage" />
-                        //인원
+
                         <ImageButton
                             android:id="@+id/BtnNum1"
                             android:layout_weight="1"
@@ -116,12 +127,15 @@
                     <TableRow
                         android:layout_weight="1">
                         //실력
+
+                        //참가비
+
                         <ImageButton
                             android:id="@+id/BtnNum3"
-                            android:layout_weight = "1"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/godimage"/>
-                        //참가비
+                            android:layout_weight="1"
+                            android:src="@drawable/godimage" />
+
                         <ImageButton
                             android:id="@+id/BtnNum4"
                             android:layout_weight = "1"

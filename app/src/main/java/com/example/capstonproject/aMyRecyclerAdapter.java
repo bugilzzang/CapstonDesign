@@ -1,9 +1,12 @@
 package com.example.capstonproject;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,11 +17,26 @@ import java.util.ArrayList;
 public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.ViewHolder> {
 
     private ArrayList<aFriendItem> mFriendList;
+    LinearLayout itemLayout;
+    String match_number;
 
     @NonNull
     @Override
     public aMyRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.a_itemrecyclerview, parent, false);
+        itemLayout = (LinearLayout) view.findViewById(R.id.itemlayout);
+        
+        
+        //matching_deatail 로 넘어가는 설정
+        itemLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = parent.getContext();
+                Intent intent = new Intent(context, c_matching_detail.class);
+                intent.putExtra("match_number", match_number);
+                context.startActivity(intent);
+            }
+        });
         return new ViewHolder(view);
     }
 
@@ -51,6 +69,7 @@ public class aMyRecyclerAdapter extends RecyclerView.Adapter<aMyRecyclerAdapter.
         }
 
         void onBind(aFriendItem item){
+
             profile.setImageResource(item.getResourceId());
             name.setText(item.getName());
             message.setText(item.getMessage());
