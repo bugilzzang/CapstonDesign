@@ -100,21 +100,13 @@
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        //(매칭종목)
-
-                        //인원
+                        //매칭 유형
 
                         <ImageButton
                             android:id="@+id/BtnNum0"
                             android:layout_marginTop="15dp"
                             android:layout_weight="1"
                             android:src="@drawable/matchimage" />
-
-                        <ImageButton
-                            android:id="@+id/BtnNum1"
-                            android:layout_weight="1"
-                            android:layout_marginTop="15dp"
-                            android:src="@drawable/peopleimage" />
                         //성별
                         <ImageButton
                             android:id="@+id/BtnNum2"
