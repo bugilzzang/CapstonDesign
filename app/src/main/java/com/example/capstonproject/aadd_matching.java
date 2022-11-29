@@ -9,12 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ActionMenuView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -36,6 +38,7 @@ public class aadd_matching extends AppCompatActivity {
     RadioGroup radio_groupsex, radio_groupexercise, radio_group_type;
     NumberPicker match_day, match_month;
     TimePicker match_time;
+    Spinner match_major;
 
     String str_sex = "", str_exercise = "", str_type = "", str_month= "", str_day= "", str_hour= "", str_minute= "", str_time= "", str_major= "";
 
@@ -52,7 +55,7 @@ public class aadd_matching extends AppCompatActivity {
         //aad_matching 버튼 연결
         match_subject = (EditText) findViewById(R.id.match_subject);
         edittext_persons = (EditText) findViewById(R.id.edittext_persons);
-        edittext_major = (EditText) findViewById(R.id.edittext_major);
+        match_major = (Spinner) findViewById(R.id.match_major);
         radio_groupsex = (RadioGroup) findViewById(R.id.radio_groupsex);
         btn_ok = (Button) findViewById(R.id.btn_ok);
         radio_groupexercise = (RadioGroup) findViewById(R.id.radio_groupexercise);
@@ -153,6 +156,21 @@ public class aadd_matching extends AppCompatActivity {
             }
         });
 
+        match_major.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                str_major = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,12 +185,13 @@ public class aadd_matching extends AppCompatActivity {
                     param.append("&a='1'," + "&match_owner=" + USERINFO.getString("id", "")
                             + "&match_title=" + match_subject.getText() + "&exercise_type=" + str_exercise
                             + "&match_type=" + str_type + "&match_time=" + str_time + "&match_persons=" + edittext_persons.getText()
-                            + "&match_sex=" + str_sex+ "&match_major=" + edittext_major.getText().toString());
+                            + "&match_sex=" + str_sex+ "&match_major=" + str_major);
 
                     result =  summit_task.execute(param.toString()).get();
+                    Log.i("addMatching-customLog", result);
 
-                    if(result.equals("성공")){
-                        Log.i("addMatching-customLog", result);
+                    if(result.equals("삽입성공")){
+
                         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(intent);
                     }
