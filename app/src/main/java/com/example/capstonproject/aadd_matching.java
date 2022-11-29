@@ -74,6 +74,7 @@ public class aadd_matching extends AppCompatActivity {
         match_month.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                str_month = "";
                 if(newVal>=10){
                     str_month += newVal;
                 }else{
@@ -85,6 +86,7 @@ public class aadd_matching extends AppCompatActivity {
         match_day.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                str_day = "";
                 if(newVal>=10){
                     str_day += newVal;
                 }else{
@@ -98,17 +100,21 @@ public class aadd_matching extends AppCompatActivity {
         match_time.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-            if(hourOfDay>=10){
-                str_hour += hourOfDay;
-            }else{
-                str_hour += "0" + hourOfDay;
-            }
 
-            if(minute >= 10){
-                str_minute += minute;
-            }else{
-                str_minute += "0" + minute;
-            }
+                str_hour = "";
+                str_minute = "";
+
+                if(hourOfDay>=10){
+                    str_hour += hourOfDay;
+                }else{
+                    str_hour += "0" + hourOfDay;
+                }
+
+                if(minute >= 10){
+                    str_minute += minute;
+                 }else{
+                    str_minute += "0" + minute;
+                }
 
             }
         });
